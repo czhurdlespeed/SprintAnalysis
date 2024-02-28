@@ -14,8 +14,7 @@ void plotTrack(int lanes, vector <int> color) {
     printf("yaxis\n");
     printf("min 0 max 6 size 4\n");
     printf("nodraw\n");
-    printf("newcurve marktype box marksize 2.6 10 cfill %d %d %d pts \
-            0 0 10 0 10 5 0 5\n", color[0], color[1], color[2]);  
+    printf("newcurve marktype box marksize 2.6 10 cfill %d %d %d pts 0 0 10 0 10 5 0 5\n", color[0], color[1], color[2]);  
 
 }
 
