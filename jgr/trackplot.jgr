@@ -1,0 +1,8 @@
+newgraph
+xaxis
+min 0.2 max 2.8 size 5 
+no_auto_hash_labels mhash 0 hash 1 shash 1
+yaxis
+min 0 max 10 size 6
+nodraw
+newcurve marktype box marksize 2.6 10 cfill 0.000000 0.500000 0.000000 pts 1.5 5
