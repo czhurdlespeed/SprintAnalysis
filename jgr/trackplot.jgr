@@ -1,8 +1,8 @@
 newgraph
 xaxis
-min 0.2 max 2.8 size 5 
-no_auto_hash_labels mhash 0 hash 1 shash 1
+min 0 max 100 size 7 
+no_auto_hash_labels mhash 0 hash 12.500000
 yaxis
-min 0 max 10 size 6
+min 0 max 110 size 11
 nodraw
-newcurve marktype box marksize 2.6 10 cfill 0.000000 0.500000 0.000000 pts 1.5 5
+newcurve marktype box marksize 100 110 cfill 1.000000 0.635294 0.266667 pts 50 55
