@@ -31,6 +31,10 @@ void plotTrack(int lanes, vector <float> color) {
     // Label start and finish line 
     printf("newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 11 : Start\n");
     printf("newstring hjr vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 99 y 111 : Finish\n");
+    // Logo on center lane
+    printf("newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 28 rotate 90 x %f y 55 : Tennessee\n", (100.0/lanes*(lanes/2.0)));
+    // Dashed 10m horiontal marks 
+
 }
 
 

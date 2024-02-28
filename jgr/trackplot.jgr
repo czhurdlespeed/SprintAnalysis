@@ -1,27 +1,30 @@
 newgraph
 xaxis
 min 0 max 100 size 7 
-no_auto_hash_labels mhash 0 hash 12.500000
+no_auto_hash_labels mhash 0 hash 11.111111
 yaxis
 min 0 max 120 size 11
 nodraw
 newcurve marktype box marksize 100 120 cfill 1.000000 0.635294 0.266667 pts 50 60
-newline pts 12.500000 0.000000 12.500000 110.000000 color 1 1 1 linethickness 2
-newline pts 25.000000 0.000000 25.000000 110.000000 color 1 1 1 linethickness 2
-newline pts 37.500000 0.000000 37.500000 110.000000 color 1 1 1 linethickness 2
-newline pts 50.000000 0.000000 50.000000 110.000000 color 1 1 1 linethickness 2
-newline pts 62.500000 0.000000 62.500000 110.000000 color 1 1 1 linethickness 2
-newline pts 75.000000 0.000000 75.000000 110.000000 color 1 1 1 linethickness 2
-newline pts 87.500000 0.000000 87.500000 110.000000 color 1 1 1 linethickness 2
+newline pts 11.111111 0.000000 11.111111 110.000000 color 1 1 1 linethickness 2
+newline pts 22.222222 0.000000 22.222222 110.000000 color 1 1 1 linethickness 2
+newline pts 33.333333 0.000000 33.333333 110.000000 color 1 1 1 linethickness 2
+newline pts 44.444444 0.000000 44.444444 110.000000 color 1 1 1 linethickness 2
+newline pts 55.555556 0.000000 55.555556 110.000000 color 1 1 1 linethickness 2
+newline pts 66.666667 0.000000 66.666667 110.000000 color 1 1 1 linethickness 2
+newline pts 77.777778 0.000000 77.777778 110.000000 color 1 1 1 linethickness 2
+newline pts 88.888889 0.000000 88.888889 110.000000 color 1 1 1 linethickness 2
 newline pts 0 110 100 110 color 1 1 1 linethickness 2
 newline pts 0 10 100 10 color 1 1 1 linethickness 2
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 6.250000 y 5 : 1
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 18.750000 y 5 : 2
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 31.250000 y 5 : 3
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 43.750000 y 5 : 4
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 56.250000 y 5 : 5
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 68.750000 y 5 : 6
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 81.250000 y 5 : 7
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 93.750000 y 5 : 8
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 5.555556 y 5 : 1
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 16.666667 y 5 : 2
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 27.777778 y 5 : 3
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 38.888889 y 5 : 4
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 50.000000 y 5 : 5
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 61.111111 y 5 : 6
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 72.222222 y 5 : 7
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 83.333333 y 5 : 8
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 94.444444 y 5 : 9
 newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 11 : Start
 newstring hjr vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 99 y 111 : Finish
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 28 rotate 90 x 50.000000 y 55 : Tennessee
