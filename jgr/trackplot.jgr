@@ -15,3 +15,13 @@ newline pts 75.000000 0.000000 75.000000 110.000000 color 1 1 1 linethickness 2
 newline pts 87.500000 0.000000 87.500000 110.000000 color 1 1 1 linethickness 2
 newline pts 0 110 100 110 color 1 1 1 linethickness 2
 newline pts 0 10 100 10 color 1 1 1 linethickness 2
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 6.250000 y 5 : 1
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 18.750000 y 5 : 2
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 31.250000 y 5 : 3
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 43.750000 y 5 : 4
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 56.250000 y 5 : 5
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 68.750000 y 5 : 6
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 81.250000 y 5 : 7
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 93.750000 y 5 : 8
+newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 11 : Start
+newstring hjr vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 99 y 111 : Finish

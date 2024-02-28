@@ -23,9 +23,15 @@ void plotTrack(int lanes, vector <float> color) {
     printf("newline pts 0 110 100 110 color 1 1 1 linethickness 2\n");
     // Horizontal Start Line 
     printf("newline pts 0 10 100 10 color 1 1 1 linethickness 2\n");
+
+    // Number the lanes below the start line 
+    for (int i = 1; i <= lanes; i++) {
+       printf("newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x %f y 5 : %d\n", (100.0/lanes*i)-((100.0/lanes)/2), i);
+    }
+    // Label start and finish line 
+    printf("newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 11 : Start\n");
+    printf("newstring hjr vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 99 y 111 : Finish\n");
 }
-
-
 
 
 int main(int argc, char** argv) {
