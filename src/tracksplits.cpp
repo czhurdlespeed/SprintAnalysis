@@ -7,16 +7,46 @@
 
 using namespace std;
 
+class Athletics;
+
 class Athlete {
     public:
         vector <float> splits;
         float time;
         string year;
         string name;
+        int lane;
+        int laneassignment(Athletics& athletics);
+        friend class Athletics;
 };
 
+class Athletics {
+    public:
+        map <int, map <float, Athlete*> *> normalizedsplits;
+        map <float, Athlete*>::iterator mit;
+        map <float, Athlete*>::iterator mit2;
+        map <float, Athlete*>::iterator mit3;
+        map <int, map <float, Athlete*> *>::iterator nmit;
+        void readData(Athletics& athletics);
+        int lanes;
+        vector <int> availablelanes;
+        void plotTrack(vector <float> color);
+        void plotAthletes();
+        
+};
 
-void plotTrack(int lanes, vector <float> color) {
+int Athlete::laneassignment(Athletics& athletics) {
+    // random number between 1 and lanes
+    int random = rand() % athletics.availablelanes.size() + 1;
+    while(athletics.availablelanes[random] == -1) {
+        random = rand() % athletics.availablelanes.size() + 1;
+    }
+    athletics.availablelanes[random] = -1;
+    return random;
+}
+
+
+void Athletics::plotTrack(vector <float> color) {
     printf("newgraph\n");
     printf("xaxis\n");
     printf("min 0 max 100 size 7 \n");
@@ -50,7 +80,7 @@ void plotTrack(int lanes, vector <float> color) {
     }
 }
 
-void readData() {
+void Athletics::readData(Athletics& athletics) {
     ifstream file;
     vector <Athlete*> athletes;
     file.open("Data.csv");
@@ -70,7 +100,8 @@ void readData() {
     while (getline(file, line)) {
         stringstream ss(line);
         string token;
-        Athlete *a = new Athlete();
+        Athlete *a = new Athlete(); // create new athlete 
+        a->lane = a->laneassignment(athletics); // assign a lane to the athlete
         for (int i=0; i<13; i++) {
             getline(ss, token, ',');
             cout << token << endl;
@@ -157,9 +188,9 @@ void readData() {
     accesstable.push_back(&split80m);
     accesstable.push_back(&split90m);
     accesstable.push_back(&split100m);
-    map <float, Athlete*>::iterator mit;
-    map <int, map <float, Athlete*> *> normalizedsplits;
-    map <int, map <float, Athlete*> *>::iterator nmit;
+   // map <float, Athlete*>::iterator mit;
+  //  map <int, map <float, Athlete*> *> normalizedsplits;
+  //  map <int, map <float, Athlete*> *>::iterator nmit;
     for (int i = 0; i < accesstable.size(); i++) { // access table to split maps to normalize
         map <float, Athlete*> * split = accesstable[i]; // maps to normalize
         map <float, Athlete*> * normalized = new map <float, Athlete*>(); // normalized map
@@ -177,9 +208,57 @@ void readData() {
     for (nmit = normalizedsplits.begin(); nmit != normalizedsplits.end(); nmit++) {
         cout << "Normalized " << nmit->first << "m split" << endl;
         for (mit = nmit->second->begin(); mit != nmit->second->end(); mit++) {
-            cout << mit->first << " " << mit->second->name << endl;
+            cout << mit->first << " Lane: " << mit->second->lane << " "  << mit->second->name << " Year: " << mit->second->year << endl;
         }
     }
+}
+
+void Athletics::plotAthletes() {
+    // Plot the athletes on the track using the lanes on the track
+    vector <float> color;
+    color.push_back(0);
+    color.push_back(0.5);
+    color.push_back(0);
+    ofstream file;
+    cout << endl;
+    cout << "Plotting athletes on the track" << endl;
+    for (nmit = normalizedsplits.begin(); nmit != normalizedsplits.end(); nmit++) { // iterate through split groups
+        cout << "Normalized " << nmit->first << "m split" << endl;
+        int i = 0;
+        for (mit = nmit->second->begin(); mit != nmit->second->end(); mit++) {
+            mit3 = mit;
+            i++;
+           // cout << "i: " << i << endl;
+            if (nmit != normalizedsplits.begin()) { // not 0m split (reaction time)
+                freopen(("jgr/" + to_string(nmit->first) + "m_split_" + to_string(i) + "place" + ".jgr").c_str(), "w", stdout);
+                plotTrack(color); // plot up to current lane for each lane in split group
+                freopen("/dev/tty", "a", stdout); // reset stdout to terminal
+            }
+            int j = 0;
+            for (mit2 = nmit->second->begin(); mit2 != nmit->second->end(); mit2++) { // iterate through athletes in split group
+                j++;
+               // cout << "j: " << j << endl;
+                //cout << mit->first << " Lane: " << mit->second->lane << " "  << mit->second->name << " Year: " << mit->second->year << endl;
+                // append stdout to a file
+                if (nmit == normalizedsplits.begin()) { // 0m split (reaction time)...want to plot each reaction time sequentially
+                    freopen(("jgr/" + to_string(nmit->first) + "m_split_"  +  to_string(i) + "place"  + ".jgr").c_str(), "w", stdout);
+                    plotTrack(color); // plot up to current lane for each lane in split group
+                    freopen("/dev/tty", "a", stdout); // reset stdout to terminal
+                }
+                // format string using sprintf   
+                char buffer[150];
+                // mit->first is the first normalized split for the current split group
+                // nmit->first is the current split group e.g. 0m 10m 20m
+                // mit->second->name is the name of the athlete
+                // j is the current lane
+                file.open("jgr/" + to_string(nmit->first) + "m_split_" +  to_string(j) + "place"  + ".jgr", std::ios::app); // create new file for each lane in each split group
+                snprintf(buffer, 150, "newline marktype box linetype dashed color 0 1 0 pts %f %f label : %s\n", (100.0/lanes*(mit->second->lane))-((100.0/lanes)/2), 10.0*(nmit->first)*mit->first + 10, mit->second->name.c_str());
+                file << buffer;
+                file.close();
+            } // j for loop
+        } // lanes for loop
+       // break;
+    } // split groups for loop
 }
 
 
@@ -188,14 +267,16 @@ int main(int argc, char** argv) {
         printf("Usage: %s <lanes> <color>\n", argv[0]);
         return 1;
     }
-    int lanes = atoi(argv[1]);
     vector <float> color;
     color.push_back(stof(argv[2])/255.0);
     color.push_back(stof(argv[3])/255.0);
     color.push_back(stof(argv[4])/255.0);
-    readData();
-    // plotTrack(lanes, color);
-
-
+    Athletics a;
+    a.lanes = atoi(argv[1]);
+    for (int i = 1; i <= a.lanes; i++) {
+        a.availablelanes.push_back(i);
+    }
+    a.readData(a);
+    a.plotAthletes();
 
 }

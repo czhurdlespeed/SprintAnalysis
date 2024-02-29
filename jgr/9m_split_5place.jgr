@@ -1,0 +1,53 @@
+newgraph
+xaxis
+min 0 max 100 size 7 
+no_auto_hash_labels mhash 0 hash 11.111111
+yaxis
+min 0 max 120 size 11
+nodraw
+newcurve marktype box marksize 100 120 cfill 0.000000 0.500000 0.000000 pts 50 60
+newline pts 11.111111 0.000000 11.111111 110.000000 color 1 1 1 linethickness 2
+newline pts 22.222222 0.000000 22.222222 110.000000 color 1 1 1 linethickness 2
+newline pts 33.333333 0.000000 33.333333 110.000000 color 1 1 1 linethickness 2
+newline pts 44.444444 0.000000 44.444444 110.000000 color 1 1 1 linethickness 2
+newline pts 55.555556 0.000000 55.555556 110.000000 color 1 1 1 linethickness 2
+newline pts 66.666667 0.000000 66.666667 110.000000 color 1 1 1 linethickness 2
+newline pts 77.777778 0.000000 77.777778 110.000000 color 1 1 1 linethickness 2
+newline pts 88.888889 0.000000 88.888889 110.000000 color 1 1 1 linethickness 2
+newline pts 0 110 100 110 color 1 1 1 linethickness 2
+newline pts 0 10 100 10 color 1 1 1 linethickness 2
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 5.555556 y 5 : 1
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 16.666667 y 5 : 2
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 27.777778 y 5 : 3
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 38.888889 y 5 : 4
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 50.000000 y 5 : 5
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 61.111111 y 5 : 6
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 72.222222 y 5 : 7
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 83.333333 y 5 : 8
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 94.444444 y 5 : 9
+newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 11 : Start
+newstring hjr vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 99 y 111 : Finish
+newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 28 rotate 90 x 50.000000 y 55 : Tennessee
+newline pts 0 20.000000 100 20.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 21.000000 : 10m
+newline pts 0 30.000000 100 30.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 31.000000 : 20m
+newline pts 0 40.000000 100 40.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 41.000000 : 30m
+newline pts 0 50.000000 100 50.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 51.000000 : 40m
+newline pts 0 60.000000 100 60.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 61.000000 : 50m
+newline pts 0 70.000000 100 70.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 71.000000 : 60m
+newline pts 0 80.000000 100 80.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 81.000000 : 70m
+newline pts 0 90.000000 100 90.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 91.000000 : 80m
+newline pts 0 100.000000 100 100.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 101.000000 : 90m
+newline marktype box linetype dashed color 0 1 0 pts 50.000000 97.850451 label : Ben Johnson
+newline marktype box linetype dashed color 0 1 0 pts 61.111111 98.046987 label : Maurice Greene
+newline marktype box linetype dashed color 0 1 0 pts 38.888889 98.244339 label : Asafa Powell
+newline marktype box linetype dashed color 0 1 0 pts 5.555556 99.498582 label : Usain Bolt
+newline marktype box linetype dashed color 0 1 0 pts 16.666667 100.000000 label : Usain Bolt
