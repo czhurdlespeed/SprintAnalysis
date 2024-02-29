@@ -28,21 +28,21 @@ newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 94.444444 y 5 : 9
 newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 11 : Start
 newstring hjr vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 99 y 111 : Finish
 newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 28 rotate 90 x 50.000000 y 55 : Tennessee
-newline pts 0 20.000000 100 20.000000 color 1 1 1 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 21.000000 : 10m
-newline pts 0 30.000000 100 30.000000 color 1 1 1 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 31.000000 : 20m
-newline pts 0 40.000000 100 40.000000 color 1 1 1 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 41.000000 : 30m
-newline pts 0 50.000000 100 50.000000 color 1 1 1 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 51.000000 : 40m
-newline pts 0 60.000000 100 60.000000 color 1 1 1 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 61.000000 : 50m
-newline pts 0 70.000000 100 70.000000 color 1 1 1 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 71.000000 : 60m
-newline pts 0 80.000000 100 80.000000 color 1 1 1 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 81.000000 : 70m
-newline pts 0 90.000000 100 90.000000 color 1 1 1 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 91.000000 : 80m
-newline pts 0 100.000000 100 100.000000 color 1 1 1 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 101.000000 : 90m
+newline pts 0 20.000000 100 20.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 21.000000 : 10m
+newline pts 0 30.000000 100 30.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 31.000000 : 20m
+newline pts 0 40.000000 100 40.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 41.000000 : 30m
+newline pts 0 50.000000 100 50.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 51.000000 : 40m
+newline pts 0 60.000000 100 60.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 61.000000 : 50m
+newline pts 0 70.000000 100 70.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 71.000000 : 60m
+newline pts 0 80.000000 100 80.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 81.000000 : 70m
+newline pts 0 90.000000 100 90.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 91.000000 : 80m
+newline pts 0 100.000000 100 100.000000 color 0 0 0 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 101.000000 : 90m

@@ -35,8 +35,8 @@ void plotTrack(int lanes, vector <float> color) {
     printf("newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 28 rotate 90 x %f y 55 : Tennessee\n", (100.0/lanes*(lanes/2.0)));
     // Dashed 10m horiontal marks 
     for (int i = 2; i <=10; i++) {
-        printf("newline pts 0 %f 100 %f color 1 1 1 linethickness 1 linetype dashed\n", 10.0*i, 10.0*i);
-        printf("newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y %f : %dm\n", 10.0*i+1, (i-1)*10);
+        printf("newline pts 0 %f 100 %f color 0 0 0 linethickness 1 linetype dashed\n", 10.0*i, 10.0*i);
+        printf("newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y %f : %dm\n", 10.0*i+1, (i-1)*10);
     }
 }
 
