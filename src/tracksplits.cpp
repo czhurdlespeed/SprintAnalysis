@@ -13,6 +13,7 @@ class Athlete {
     public:
         vector <float> splits;
         float time;
+        float normalizedtime;
         string year;
         string name;
         int lane;
@@ -24,12 +25,17 @@ class Athletics {
     public:
         map <int, map <float, Athlete*> *> normalizedsplits;
         map <float, Athlete*>::iterator mit;
+        map <float, Athlete*>::reverse_iterator rmit;
         map <float, Athlete*>::iterator mit2;
+        map <float, Athlete*>::reverse_iterator rmit2;
         map <float, Athlete*>::iterator mit3;
+        map <float, Athlete*>::reverse_iterator rmit3;
         map <int, map <float, Athlete*> *>::iterator nmit;
+        map <int, map <float, Athlete*> *>::reverse_iterator rnmit;
         void readData(Athletics& athletics);
         int lanes;
         vector <int> availablelanes;
+        vector < vector <Athlete*> > athlete_storage;
         void plotTrack(vector <float> color);
         void plotAthletes();
         
@@ -49,7 +55,7 @@ int Athlete::laneassignment(Athletics& athletics) {
 void Athletics::plotTrack(vector <float> color) {
     printf("newgraph\n");
     printf("xaxis\n");
-    printf("min 0 max 100 size 7 \n");
+    printf("min 0 max 100 size 5 \n");
     printf("no_auto_hash_labels mhash 0 hash %f\n", 100.0/lanes);
     printf("yaxis\n");
     printf("min 0 max 120 size 11\n");
@@ -197,6 +203,7 @@ void Athletics::readData(Athletics& athletics) {
         float fastestsplit = split->begin()->first; // fastest split from split map
         for (mit = split->begin(); mit != split->end(); mit++) { // iterate through split map
             normalized->insert(pair<float, Athlete*>(fastestsplit/mit->first, mit->second)); // insert individual's normalized split into normalized map
+            mit->second->normalizedtime = fastestsplit/mit->first; // set normalized time for individual
         }
         normalizedsplits[i] = normalized; // insert normalized map for given split into normalized splits map
     }
@@ -205,11 +212,18 @@ void Athletics::readData(Athletics& athletics) {
         normalizedsplits < split location, < normalized split, Athlete *> > 
         Now just go off of normalized splits to plot athletes on the track
 */
+    athletes.clear();
+    int i = 0;
     for (nmit = normalizedsplits.begin(); nmit != normalizedsplits.end(); nmit++) {
         cout << "Normalized " << nmit->first << "m split" << endl;
-        for (mit = nmit->second->begin(); mit != nmit->second->end(); mit++) {
-            cout << mit->first << " Lane: " << mit->second->lane << " "  << mit->second->name << " Year: " << mit->second->year << endl;
+        for (rmit = nmit->second->rbegin(); rmit != nmit->second->rend(); rmit++) {
+            cout << rmit->first << " Lane: " << rmit->second->lane << " "  << rmit->second->name << " Year: " << rmit->second->year << endl;
+            // store athlete pointer in vector of athletes for each split
+            athletes.push_back(rmit->second);
         }
+        athletics.athlete_storage.push_back(athletes);
+        athletes.clear();
+        i++;
     }
 }
 
@@ -219,46 +233,52 @@ void Athletics::plotAthletes() {
     color.push_back(0);
     color.push_back(0.5);
     color.push_back(0);
-    ofstream file;
     cout << endl;
     cout << "Plotting athletes on the track" << endl;
-    for (nmit = normalizedsplits.begin(); nmit != normalizedsplits.end(); nmit++) { // iterate through split groups
-        cout << "Normalized " << nmit->first << "m split" << endl;
-        int i = 0;
-        for (mit = nmit->second->begin(); mit != nmit->second->end(); mit++) {
-            mit3 = mit;
-            i++;
-           // cout << "i: " << i << endl;
-            if (nmit != normalizedsplits.begin()) { // not 0m split (reaction time)
-                freopen(("jgr/" + to_string(nmit->first) + "m_split_" + to_string(i) + "place" + ".jgr").c_str(), "w", stdout);
+    cout << "Split groups: " << athlete_storage.size() << endl;
+    cout << "Num Athletes: " << athlete_storage[0].size() << endl;
+    
+    for (int i = 0; i < athlete_storage.size(); i++) {
+        printf("%s m split\n", to_string(i).c_str());
+        for (int j = 0; j < athlete_storage[i].size(); j++) {
+            cout << athlete_storage[i][j]->name << " " << athlete_storage[i][j]->year << " " << athlete_storage[i][j]->lane << " " << athlete_storage[i][j]->normalizedtime << endl; 
+            if (i==0) {
+                freopen(("jgr/" + to_string(i) + "m_split_" + to_string(j) + "place" + ".jgr").c_str(), "w", stdout);
                 plotTrack(color); // plot up to current lane for each lane in split group
                 freopen("/dev/tty", "a", stdout); // reset stdout to terminal
             }
-            int j = 0;
-            for (mit2 = nmit->second->begin(); mit2 != nmit->second->end(); mit2++) { // iterate through athletes in split group
-                j++;
-               // cout << "j: " << j << endl;
-                //cout << mit->first << " Lane: " << mit->second->lane << " "  << mit->second->name << " Year: " << mit->second->year << endl;
-                // append stdout to a file
-                if (nmit == normalizedsplits.begin()) { // 0m split (reaction time)...want to plot each reaction time sequentially
-                    freopen(("jgr/" + to_string(nmit->first) + "m_split_"  +  to_string(i) + "place"  + ".jgr").c_str(), "w", stdout);
-                    plotTrack(color); // plot up to current lane for each lane in split group
-                    freopen("/dev/tty", "a", stdout); // reset stdout to terminal
+            string content;
+            if (i > 0) {
+                string line;
+                ifstream file;
+                file.open("jgr/" + to_string(i-1) + "m_split_" + to_string(j) + "place" + ".jgr");
+                while (getline(file, line)) {
+                    content += line + "\n";
                 }
-                // format string using sprintf   
-                char buffer[150];
-                // mit->first is the first normalized split for the current split group
-                // nmit->first is the current split group e.g. 0m 10m 20m
-                // mit->second->name is the name of the athlete
-                // j is the current lane
-                file.open("jgr/" + to_string(nmit->first) + "m_split_" +  to_string(j) + "place"  + ".jgr", std::ios::app); // create new file for each lane in each split group
-                snprintf(buffer, 150, "newline marktype box linetype dashed color 0 1 0 pts %f %f label : %s\n", (100.0/lanes*(mit->second->lane))-((100.0/lanes)/2), 10.0*(nmit->first)*mit->first + 10, mit->second->name.c_str());
-                file << buffer;
                 file.close();
-            } // j for loop
-        } // lanes for loop
-       // break;
-    } // split groups for loop
+            }
+                // read previous file's content and place in string content
+            ofstream fileout;
+            fileout.open("jgr/" + to_string(i) + "m_split_" + to_string(j) + "place" + ".jgr", ios::app);
+            for (int k = 0; k <= j; k++) {
+                if (i>0) {
+                    fileout << content;
+                }
+                float x = 100.0/lanes*athlete_storage[i][k]->lane - ((100.0/lanes)/2);
+                float y;
+                if (i==0)  y = 10;
+                else y = 10.0*i + (athlete_storage[i][k]->normalizedtime*10);
+                char buffer2[45];
+                snprintf(buffer2, 45, "Place: %d %s Lane: %d", k+1, athlete_storage[i][k]->name.c_str(), athlete_storage[i][k]->lane);
+                buffer2[sizeof(buffer2)-1] = '\0';
+                char buffer[200];
+                snprintf(buffer,200, "newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts %f %f label : %s\n",x, y, buffer2);
+                buffer[sizeof(buffer)-1] = '\0';
+                fileout << buffer; 
+            }
+            fileout.close();
+        }
+    }
 }
 
 

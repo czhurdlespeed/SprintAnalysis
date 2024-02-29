@@ -1,6 +1,6 @@
 newgraph
 xaxis
-min 0 max 100 size 7 
+min 0 max 100 size 5 
 no_auto_hash_labels mhash 0 hash 11.111111
 yaxis
 min 0 max 120 size 11
@@ -46,10 +46,6 @@ newline pts 0 90.000000 100 90.000000 color 0 0 0 linethickness 1 linetype dashe
 newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 91.000000 : 80m
 newline pts 0 100.000000 100 100.000000 color 0 0 0 linethickness 1 linetype dashed
 newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 101.000000 : 90m
-newline marktype box linetype dashed color 0 1 0 pts 38.888889 10.000000 label : Asafa Powell
-newline marktype box linetype dashed color 0 1 0 pts 16.666667 10.000000 label : Usain Bolt
-newline marktype box linetype dashed color 0 1 0 pts 94.444444 10.000000 label : Justin Gatlin
-newline marktype box linetype dashed color 0 1 0 pts 61.111111 10.000000 label : Maurice Greene
-newline marktype box linetype dashed color 0 1 0 pts 50.000000 10.000000 label : Ben Johnson
-newline marktype box linetype dashed color 0 1 0 pts 72.222222 10.000000 label : Christian Coleman
-newline marktype box linetype dashed color 0 1 0 pts 27.777778 10.000000 label : Leroy Burrell
+newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 27.777779 10.000000 label : Place: 1 Leroy Burrell Lane: 3
+newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 72.222221 10.000000 label : Place: 2 Christian Coleman Lane: 7
+newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 50.000000 10.000000 label : Place: 3 Ben Johnson Lane: 5
