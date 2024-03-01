@@ -230,6 +230,8 @@ void Athletics::readData(Athletics& athletics) {
 void Athletics::plotAthletes() {
     // Plot the athletes on the track using the lanes on the track
     vector <float> color;
+    ifstream file;
+    ofstream fileout;
     color.push_back(0);
     color.push_back(0.5);
     color.push_back(0);
@@ -250,7 +252,6 @@ void Athletics::plotAthletes() {
             string content;
             if (i > 0) {
                 string line;
-                ifstream file;
                 file.open("jgr/" + to_string(i-1) + "m_split_" + to_string(j) + "place" + ".jgr");
                 while (getline(file, line)) {
                     content += line + "\n";
@@ -258,12 +259,11 @@ void Athletics::plotAthletes() {
                 file.close();
             }
                 // read previous file's content and place in string content
-            ofstream fileout;
             fileout.open("jgr/" + to_string(i) + "m_split_" + to_string(j) + "place" + ".jgr", ios::app);
+            if (i>0) {
+                fileout << content;
+            }
             for (int k = 0; k <= j; k++) {
-                if (i>0) {
-                    fileout << content;
-                }
                 float x = 100.0/lanes*athlete_storage[i][k]->lane - ((100.0/lanes)/2);
                 float y;
                 if (i==0)  y = 10;
