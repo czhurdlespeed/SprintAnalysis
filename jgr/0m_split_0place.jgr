@@ -46,4 +46,5 @@ newline pts 0 90.000000 100 90.000000 color 0 0 0 linethickness 1 linetype dashe
 newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 91.000000 : 80m
 newline pts 0 100.000000 100 100.000000 color 0 0 0 linethickness 1 linetype dashed
 newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 101.000000 : 90m
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 27.777779 10.000000 label : Place: 1 Leroy Burrell Lane: 3
+newcurve marktype box linetype dashed color 0.184314 0.400000 0.560784 marksize 0.35 0.175 label : Place: 1 Leroy Burrell Lane: 8
+pts 83.333336 10.000000

@@ -46,48 +46,21 @@ newline pts 0 90.000000 100 90.000000 color 0 0 0 linethickness 1 linetype dashe
 newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 91.000000 : 80m
 newline pts 0 100.000000 100 100.000000 color 0 0 0 linethickness 1 linetype dashed
 newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 101.000000 : 90m
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 27.777779 10.000000 label : Place: 1 Leroy Burrell Lane: 3
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 72.222221 10.000000 label : Place: 2 Christian Coleman Lane: 7
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 50.000000 10.000000 label : Place: 3 Ben Johnson Lane: 5
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 61.111111 10.000000 label : Place: 4 Maurice Greene Lane: 6
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 94.444443 10.000000 label : Place: 5 Justin Gatlin Lane: 9
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 16.666666 10.000000 label : Place: 6 Usain Bolt Lane: 2
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 38.888889 10.000000 label : Place: 7 Asafa Powell Lane: 4
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 5.555555 10.000000 label : Place: 8 Usain Bolt Lane: 1
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 83.333336 10.000000 label : Place: 9 Carl Lewis Lane: 8
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 27.777779 19.692307 label : Place: 1 Leroy Burrell Lane: 3
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 50.000000 19.741608 label : Place: 2 Ben Johnson Lane: 5
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 5.555555 19.877256 label : Place: 3 Usain Bolt Lane: 1
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 61.111111 19.771429 label : Place: 4 Maurice Greene Lane: 6
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 72.222221 19.630898 label : Place: 5 Christian Coleman Lane: 7
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 94.444443 19.655172 label : Place: 6 Justin Gatlin Lane: 9
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 16.666666 20.000000 label : Place: 7 Usain Bolt Lane: 2
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 38.888889 19.801428 label : Place: 8 Asafa Powell Lane: 4
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 83.333336 19.643505 label : Place: 9 Carl Lewis Lane: 8
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 50.000000 29.741608 label : Place: 1 Ben Johnson Lane: 5
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 72.222221 29.630898 label : Place: 2 Christian Coleman Lane: 7
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 5.555555 29.877256 label : Place: 3 Usain Bolt Lane: 1
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 16.666666 30.000000 label : Place: 4 Usain Bolt Lane: 2
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 27.777779 29.692307 label : Place: 5 Leroy Burrell Lane: 3
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 61.111111 29.771429 label : Place: 6 Maurice Greene Lane: 6
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 94.444443 29.655172 label : Place: 7 Justin Gatlin Lane: 9
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 38.888889 29.801428 label : Place: 8 Asafa Powell Lane: 4
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 83.333336 29.643505 label : Place: 9 Carl Lewis Lane: 8
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 72.222221 39.630898 label : Place: 1 Christian Coleman Lane: 7
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 16.666666 40.000000 label : Place: 2 Usain Bolt Lane: 2
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 5.555555 39.877258 label : Place: 3 Usain Bolt Lane: 1
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 27.777779 39.692307 label : Place: 4 Leroy Burrell Lane: 3
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 50.000000 39.741608 label : Place: 5 Ben Johnson Lane: 5
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 94.444443 39.655174 label : Place: 6 Justin Gatlin Lane: 9
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 61.111111 39.771431 label : Place: 7 Maurice Greene Lane: 6
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 38.888889 39.801430 label : Place: 8 Asafa Powell Lane: 4
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 83.333336 39.643505 label : Place: 9 Carl Lewis Lane: 8
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 16.666666 50.000000 label : Place: 1 Usain Bolt Lane: 2
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 72.222221 49.630898 label : Place: 2 Christian Coleman Lane: 7
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 5.555555 49.877258 label : Place: 3 Usain Bolt Lane: 1
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 50.000000 49.741608 label : Place: 4 Ben Johnson Lane: 5
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 27.777779 49.692307 label : Place: 5 Leroy Burrell Lane: 3
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 38.888889 49.801430 label : Place: 6 Asafa Powell Lane: 4
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 61.111111 49.771431 label : Place: 7 Maurice Greene Lane: 6
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 94.444443 49.655174 label : Place: 8 Justin Gatlin Lane: 9
-newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts 83.333336 49.643505 label : Place: 9 Carl Lewis Lane: 8
+newcurve marktype box linetype dashed color 0.454902 0.745098 0.968627 marksize 0.35 0.175 label : Place: 1 Usain Bolt Lane: 6
+pts 61.111111 10.000000 61.111111 19.703075 61.111111 29.944366 61.111111 39.992054 61.111111 50.000000
+newcurve marktype box linetype dashed color 0.447059 0.125490 0.274510 marksize 0.35 0.175 label : Place: 2 Christian Coleman Lane: 1
+pts 5.555555 10.000000 5.555555 19.770422 5.555555 29.954750 5.555555 40.000000 5.555555 49.963463
+newcurve marktype box linetype dashed color 0.615686 0.901961 0.011765 marksize 0.35 0.175 label : Place: 3 Usain Bolt Lane: 4
+pts 38.888889 10.000000 38.888889 19.865229 38.888889 29.947826 38.888889 39.968296 38.888889 49.959183
+newcurve marktype box linetype dashed color 0.909804 0.074510 0.619608 marksize 0.35 0.175 label : Place: 4 Ben Johnson Lane: 3
+pts 27.777779 10.000000 27.777779 19.945652 27.777779 30.000000 27.777779 39.928947 27.777779 49.927197
+newcurve marktype box linetype dashed color 0.184314 0.400000 0.560784 marksize 0.35 0.175 label : Place: 5 Leroy Burrell Lane: 8
+pts 83.333336 10.000000 83.333336 20.000000 83.333336 29.896194 83.333336 39.955147 83.333336 49.905983
+newcurve marktype box linetype dashed color 0.086275 0.654902 0.815686 marksize 0.35 0.175 label : Place: 6 Asafa Powell Lane: 5
+pts 50.000000 10.000000 50.000000 19.682541 50.000000 29.828178 50.000000 39.851173 50.000000 49.884861
+newcurve marktype box linetype dashed color 0.737255 0.427451 0.470588 marksize 0.35 0.175 label : Place: 7 Maurice Greene Lane: 7
+pts 72.222221 10.000000 72.222221 19.838711 72.222221 29.892769 72.222221 39.902885 72.222221 49.883808
+newcurve marktype box linetype dashed color 0.309804 0.627451 0.203922 marksize 0.35 0.175 label : Place: 8 Justin Gatlin Lane: 2
+pts 16.666666 10.000000 16.666666 19.744410 16.666666 29.868874 16.666666 39.908089 16.666666 49.847069
+newcurve marktype box linetype dashed color 0.686275 0.772549 0.447059 marksize 0.35 0.175 label : Place: 9 Carl Lewis Lane: 9
+pts 94.444443 10.000000 94.444443 19.432989 94.444443 29.662163 94.444443 39.649616 94.444443 49.698746
