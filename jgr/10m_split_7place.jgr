@@ -1,64 +1,64 @@
 newgraph
 xaxis
-min 0 max 100 size 5 
+min 0 max 100 size 5.5 
 no_auto_hash_labels mhash 0 hash 11.111111
 yaxis
-min 0 max 120 size 11
+min 0 max 1200 size 10.75
 nodraw
-newcurve marktype box marksize 100 120 cfill 0.000000 0.500000 0.000000 pts 50 60
-newline pts 11.111111 0.000000 11.111111 110.000000 color 1 1 1 linethickness 2
-newline pts 22.222222 0.000000 22.222222 110.000000 color 1 1 1 linethickness 2
-newline pts 33.333333 0.000000 33.333333 110.000000 color 1 1 1 linethickness 2
-newline pts 44.444444 0.000000 44.444444 110.000000 color 1 1 1 linethickness 2
-newline pts 55.555556 0.000000 55.555556 110.000000 color 1 1 1 linethickness 2
-newline pts 66.666667 0.000000 66.666667 110.000000 color 1 1 1 linethickness 2
-newline pts 77.777778 0.000000 77.777778 110.000000 color 1 1 1 linethickness 2
-newline pts 88.888889 0.000000 88.888889 110.000000 color 1 1 1 linethickness 2
-newline pts 0 110 100 110 color 1 1 1 linethickness 2
-newline pts 0 10 100 10 color 1 1 1 linethickness 2
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 5.555556 y 5 : 1
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 16.666667 y 5 : 2
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 27.777778 y 5 : 3
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 38.888889 y 5 : 4
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 50.000000 y 5 : 5
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 61.111111 y 5 : 6
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 72.222222 y 5 : 7
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 83.333333 y 5 : 8
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x 94.444444 y 5 : 9
-newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 11 : Start
-newstring hjr vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 99 y 111 : Finish
-newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 28 rotate 90 x 50.000000 y 55 : Tennessee
-newline pts 0 20.000000 100 20.000000 color 0 0 0 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 21.000000 : 10m
-newline pts 0 30.000000 100 30.000000 color 0 0 0 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 31.000000 : 20m
-newline pts 0 40.000000 100 40.000000 color 0 0 0 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 41.000000 : 30m
-newline pts 0 50.000000 100 50.000000 color 0 0 0 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 51.000000 : 40m
-newline pts 0 60.000000 100 60.000000 color 0 0 0 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 61.000000 : 50m
-newline pts 0 70.000000 100 70.000000 color 0 0 0 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 71.000000 : 60m
-newline pts 0 80.000000 100 80.000000 color 0 0 0 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 81.000000 : 70m
-newline pts 0 90.000000 100 90.000000 color 0 0 0 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 91.000000 : 80m
-newline pts 0 100.000000 100 100.000000 color 0 0 0 linethickness 1 linetype dashed
-newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y 101.000000 : 90m
-newcurve marktype box linetype dashed color 0.454902 0.745098 0.968627 marksize 0.35 0.175 label : Place: 1 Usain Bolt Lane: 6
-pts 61.111111 10.000000 61.111111 19.703075 61.111111 29.944366 61.111111 39.992054 61.111111 50.000000 61.111111 60.000000 61.111111 70.000000 61.111111 80.000000 61.111111 90.000000 61.111111 100.000000 61.111111 110.000000
-newcurve marktype box linetype dashed color 0.615686 0.901961 0.011765 marksize 0.35 0.175 label : Place: 2 Usain Bolt Lane: 4
-pts 38.888889 10.000000 38.888889 19.865229 38.888889 29.947826 38.888889 39.968296 38.888889 49.959183 38.888889 59.929153 38.888889 69.938339 38.888889 79.931419 38.888889 89.938477 38.888889 99.944290 38.888889 109.877258
-newcurve marktype box linetype dashed color 0.086275 0.654902 0.815686 marksize 0.35 0.175 label : Place: 3 Asafa Powell Lane: 5
-pts 50.000000 10.000000 50.000000 19.682541 50.000000 29.828178 50.000000 39.851173 50.000000 49.884861 50.000000 59.866425 50.000000 69.837242 50.000000 79.814651 50.000000 89.809166 50.000000 99.804924 50.000000 109.801430
-newcurve marktype box linetype dashed color 0.737255 0.427451 0.470588 marksize 0.35 0.175 label : Place: 4 Maurice Greene Lane: 7
-pts 72.222221 10.000000 72.222221 19.838711 72.222221 29.892769 72.222221 39.902885 72.222221 49.883808 72.222221 59.848648 72.222221 69.837242 72.222221 79.801102 72.222221 89.784920 72.222221 99.782997 72.222221 109.771431
-newcurve marktype box linetype dashed color 0.909804 0.074510 0.619608 marksize 0.35 0.175 label : Place: 5 Ben Johnson Lane: 3
-pts 27.777779 10.000000 27.777779 19.945652 27.777779 30.000000 27.777779 39.928947 27.777779 49.927197 27.777779 59.884270 27.777779 69.852661 27.777779 79.814659 27.777779 89.772842 27.777779 99.761162 27.777779 109.741608
-newcurve marktype box linetype dashed color 0.184314 0.400000 0.560784 marksize 0.35 0.175 label : Place: 6 Leroy Burrell Lane: 8
-pts 83.333336 10.000000 83.333336 20.000000 83.333336 29.896194 83.333336 39.955147 83.333336 49.905983 83.333336 59.846874 83.333336 69.806549 83.333336 79.774101 83.333336 89.748764 83.333336 99.706993 83.333336 109.692307
-newcurve marktype box linetype dashed color 0.309804 0.627451 0.203922 marksize 0.35 0.175 label : Place: 7 Justin Gatlin Lane: 2
-pts 16.666666 10.000000 16.666666 19.744410 16.666666 29.868874 16.666666 39.908089 16.666666 49.847069 16.666666 59.781677 16.666666 69.748756 16.666666 79.709908 16.666666 89.679626 16.666666 99.666222 16.666666 109.655174
-newcurve marktype box linetype dashed color 0.686275 0.772549 0.447059 marksize 0.35 0.175 label : Place: 8 Carl Lewis Lane: 9
-pts 94.444443 10.000000 94.444443 19.432989 94.444443 29.662163 94.444443 39.649616 94.444443 49.698746 94.444443 59.691490 94.444443 69.670769 94.444443 79.641304 94.444443 89.630173 94.444443 99.642776 94.444443 109.643509
+newcurve marktype box marksize 100 1200 cfill 0.047059 0.137255 0.250980 pts 50 600
+newline pts 11.111111 0.000000 11.111111 1200.000000 color 1 1 1 linethickness 2
+newline pts 22.222222 0.000000 22.222222 1200.000000 color 1 1 1 linethickness 2
+newline pts 33.333333 0.000000 33.333333 1200.000000 color 1 1 1 linethickness 2
+newline pts 44.444444 0.000000 44.444444 1200.000000 color 1 1 1 linethickness 2
+newline pts 55.555556 0.000000 55.555556 1200.000000 color 1 1 1 linethickness 2
+newline pts 66.666667 0.000000 66.666667 1200.000000 color 1 1 1 linethickness 2
+newline pts 77.777778 0.000000 77.777778 1200.000000 color 1 1 1 linethickness 2
+newline pts 88.888889 0.000000 88.888889 1200.000000 color 1 1 1 linethickness 2
+newline pts 0 1100 100 1100 color 1.000000 1.000000 1.000000 linethickness 2
+newline pts 0 100 100 100 color 1.000000 1.000000 1.000000 linethickness 2
+newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 x 5.555556 y 50 : 1
+newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 x 16.666667 y 50 : 2
+newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 x 27.777778 y 50 : 3
+newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 x 38.888889 y 50 : 4
+newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 x 50.000000 y 50 : 5
+newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 x 61.111111 y 50 : 6
+newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 x 72.222222 y 50 : 7
+newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 x 83.333333 y 50 : 8
+newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 x 94.444444 y 50 : 9
+newstring hjl vjb lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 10 x 1 y 110 : Start
+newstring hjr vjb lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 10 x 99 y 1110 : Finish
+newstring hjc vjc lcolor 0.909804 0.466667 0.133333 font Times-Bold fontsize 28 rotate 90 x 50.000000 y 600 : Auburn
+newline pts 0 200.000000 100 200.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 201.000000 : 10m
+newline pts 0 300.000000 100 300.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 301.000000 : 20m
+newline pts 0 400.000000 100 400.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 401.000000 : 30m
+newline pts 0 500.000000 100 500.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 501.000000 : 40m
+newline pts 0 600.000000 100 600.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 601.000000 : 50m
+newline pts 0 700.000000 100 700.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 701.000000 : 60m
+newline pts 0 800.000000 100 800.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 801.000000 : 70m
+newline pts 0 900.000000 100 900.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 901.000000 : 80m
+newline pts 0 1000.000000 100 1000.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
+newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 1001.000000 : 90m
+newcurve marktype box linetype dashed glines 7 2 color 0.454902 0.745098 0.968627 marksize .75 3.75 label : Place: 1 Usain Bolt Lane: 6
+pts 61.111111 100.000000 61.111111 197.030746 61.111111 298.887329 61.111111 399.761627 61.111111 500.000000 61.111111 600.000000 61.111111 700.000000 61.111111 800.000000 61.111111 900.000000 61.111111 1000.000000 61.111111 1100.000000
+newcurve marktype box linetype dashed glines 7 2 color 0.615686 0.901961 0.011765 marksize .75 3.75 label : Place: 2 Usain Bolt Lane: 4
+pts 38.888889 100.000000 38.888889 198.652283 38.888889 298.956512 38.888889 399.048859 38.888889 498.367340 38.888889 596.457764 38.888889 696.300415 38.888889 795.199463 38.888889 895.078430 38.888889 994.985779 38.888889 1087.725586
+newcurve marktype box linetype dashed glines 7 2 color 0.737255 0.427451 0.470588 marksize .75 3.75 label : Place: 3 Maurice Greene Lane: 7
+pts 72.222221 100.000000 72.222221 198.387100 72.222221 297.855408 72.222221 397.086609 72.222221 495.352356 72.222221 592.432373 72.222221 690.234741 72.222221 786.077393 72.222221 882.793579 72.222221 980.469849 72.222221 1077.142822
+newcurve marktype box linetype dashed glines 7 2 color 0.909804 0.074510 0.619608 marksize .75 3.75 label : Place: 4 Ben Johnson Lane: 3
+pts 27.777779 100.000000 27.777779 199.456512 27.777779 300.000000 27.777779 397.868408 27.777779 497.087799 27.777779 594.213379 27.777779 691.159851 27.777779 787.026306 27.777779 881.827148 27.777779 978.504517 27.777779 1074.160767
+newcurve marktype box linetype dashed glines 7 2 color 0.184314 0.400000 0.560784 marksize .75 3.75 label : Place: 5 Leroy Burrell Lane: 8
+pts 83.333336 100.000000 83.333336 200.000000 83.333336 297.923859 83.333336 398.654358 83.333336 496.239349 83.333336 592.343750 83.333336 688.393127 83.333336 784.187317 83.333336 879.901489 83.333336 973.629333 83.333336 1069.230835
+newcurve marktype box linetype dashed glines 7 2 color 0.309804 0.627451 0.203922 marksize .75 3.75 label : Place: 6 Justin Gatlin Lane: 2
+pts 16.666666 100.000000 16.666666 197.444092 16.666666 297.377502 16.666666 397.242645 16.666666 493.882751 16.666666 589.083740 16.666666 684.925537 16.666666 779.693481 16.666666 874.370239 16.666666 969.960205 16.666666 1065.517212
+newcurve marktype box linetype dashed glines 7 2 color 0.686275 0.772549 0.447059 marksize .75 3.75 label : Place: 7 Carl Lewis Lane: 9
+pts 94.444443 100.000000 94.444443 194.329895 94.444443 293.243225 94.444443 389.488495 94.444443 487.949799 94.444443 584.574463 94.444443 680.246155 94.444443 774.891296 94.444443 870.413574 94.444443 967.850098 94.444443 1064.350342
+newcurve marktype box linetype dashed glines 7 2 color 0.447059 0.125490 0.274510 marksize .75 3.75 label : Place: 8 Christian Coleman Lane: 1
+pts 5.555555 100.000000 5.555555 197.704224 5.555555 299.095032 5.555555 400.000000 5.555555 498.538605 5.555555 594.839783 5.555555 690.882019 5.555555 783.904785 5.555555 877.698669 5.555555 972.370667 5.555555 1063.089600

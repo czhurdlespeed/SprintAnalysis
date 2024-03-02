@@ -9,6 +9,14 @@ using namespace std;
 
 class Athletics;
 
+class SEC {
+    public:
+        string name;
+        vector <float> trackcolor; // track color 
+        vector <float> lanecolor; // lane color
+        vector <float> logocolor; // logo color
+};
+
 class Athlete {
     public:
         vector <float> splits;
@@ -38,9 +46,11 @@ class Athletics {
         int lanes;
         vector <int> availablelanes;
         vector < vector <Athlete*> > athlete_storage;
-        void plotTrack(vector <float> color);
+        void plotTrack();
         void plotAthletes();
-        
+        map <string, SEC*> schools;
+        SEC *selectedschool; 
+        void formSEC();
 };
 
 int Athlete::laneassignment(Athletics& athletics) {
@@ -54,37 +64,37 @@ int Athlete::laneassignment(Athletics& athletics) {
 }
 
 
-void Athletics::plotTrack(vector <float> color) {
+void Athletics::plotTrack() {
     printf("newgraph\n");
     printf("xaxis\n");
-    printf("min 0 max 100 size 5 \n");
+    printf("min 0 max 100 size 5.5 \n");
     printf("no_auto_hash_labels mhash 0 hash %f\n", 100.0/lanes);
     printf("yaxis\n");
-    printf("min 0 max 120 size 11\n");
+    printf("min 0 max 1200 size 10.75\n"); // 120 -> 240
     printf("nodraw\n");
-    printf("newcurve marktype box marksize 100 120 cfill %f %f %f pts 50 60\n", color[0], color[1], color[2]);  
+    printf("newcurve marktype box marksize 100 1200 cfill %f %f %f pts 50 600\n", selectedschool->trackcolor[0]/255.0, selectedschool->trackcolor[1]/255.0, selectedschool->trackcolor[2]/255.0);  
     // Let's draw the lanes vertically and white
     for (int i = 1; i < lanes; i++) {
-        printf("newline pts %f %f %f %f color 1 1 1 linethickness 2\n", 100.0/lanes*i, 0.0, 100.0/lanes*i, 110.0);
+        printf("newline pts %f %f %f %f color 1 1 1 linethickness 2\n", 100.0/lanes*i, 0.0, 100.0/lanes*i, 1200.0);
     }
     // Horizontal Finish Line
-    printf("newline pts 0 110 100 110 color 1 1 1 linethickness 2\n");
+    printf("newline pts 0 1100 100 1100 color %f %f %f linethickness 2\n", selectedschool->lanecolor[0]/255.0, selectedschool->lanecolor[1]/255.0, selectedschool->lanecolor[2]/255.0);
     // Horizontal Start Line 
-    printf("newline pts 0 10 100 10 color 1 1 1 linethickness 2\n");
+    printf("newline pts 0 100 100 100 color %f %f %f linethickness 2\n", selectedschool->lanecolor[0]/255.0, selectedschool->lanecolor[1]/255.0, selectedschool->lanecolor[2]/255.0);
 
     // Number the lanes below the start line 
     for (int i = 1; i <= lanes; i++) {
-       printf("newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 16 x %f y 5 : %d\n", (100.0/lanes*i)-((100.0/lanes)/2), i);
+       printf("newstring hjc vjc lcolor %f %f %f font Times-Bold fontsize 16 x %f y 50 : %d\n", selectedschool->lanecolor[0]/255.0, selectedschool->lanecolor[1]/255.0, selectedschool->lanecolor[2]/255.0, (100.0/lanes*i)-((100.0/lanes)/2), i);
     }
     // Label start and finish line 
-    printf("newstring hjl vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 1 y 11 : Start\n");
-    printf("newstring hjr vjb lcolor 1 1 1 font Times-Bold fontsize 10 x 99 y 111 : Finish\n");
+    printf("newstring hjl vjb lcolor %f %f %f font Times-Bold fontsize 10 x 1 y 110 : Start\n", selectedschool->lanecolor[0]/255.0, selectedschool->lanecolor[1]/255.0, selectedschool->lanecolor[2]/255.0);
+    printf("newstring hjr vjb lcolor %f %f %f font Times-Bold fontsize 10 x 99 y 1110 : Finish\n", selectedschool->lanecolor[0]/255.0, selectedschool->lanecolor[1]/255.0, selectedschool->lanecolor[2]/255.0);
     // Logo on center lane
-    printf("newstring hjc vjc lcolor 1 1 1 font Times-Bold fontsize 28 rotate 90 x %f y 55 : Tennessee\n", (100.0/lanes*(lanes/2.0)));
+    printf("newstring hjc vjc lcolor %f %f %f font Times-Bold fontsize 28 rotate 90 x %f y 600 : %s\n",selectedschool->logocolor[0]/255.0, selectedschool->logocolor[1]/255.0, selectedschool->logocolor[2]/255.0 ,(100.0/lanes*(lanes/2.0)), selectedschool->name.c_str());
     // Dashed 10m horiontal marks 
     for (int i = 2; i <=10; i++) {
-        printf("newline pts 0 %f 100 %f color 0 0 0 linethickness 1 linetype dashed\n", 10.0*i, 10.0*i);
-        printf("newstring hjl vjb lcolor 0 0 0 font Times-Bold fontsize 10 x 1 y %f : %dm\n", 10.0*i+1, (i-1)*10);
+        printf("newline pts 0 %f 100 %f color %f %f %f linethickness 1 linetype dashed\n", 100.0*i, 100.0*i, 240.0/255.0, 220.0/255.0, 70.0/255.0);
+        printf("newstring hjl vjb lcolor %f %f %f font Times-Bold fontsize 10 x 1 y %f : %dm\n",240.0/255.0, 220.0/255.0, 70.0/255.0 ,100.0*i+1, (i-1)*10);
     }
 }
 
@@ -204,9 +214,18 @@ void Athletics::readData(Athletics& athletics) {
         map <float, Athlete*> * normalized = new map <float, Athlete*>(); // normalized map
         float fastestsplit = split->begin()->first; // fastest split from split map
         for (mit = split->begin(); mit != split->end(); mit++) { // iterate through split map
-            normalized->insert(pair<float, Athlete*>(fastestsplit/mit->first, mit->second)); // insert individual's normalized split into normalized map
-            mit->second->normalizedtime.push_back(fastestsplit/mit->first); // set normalized time for individual
-            mit->second->normalized_y.push_back( (i==0) ? 10.0 : 10.0*i + mit->second->normalizedtime[mit->second->normalizedtime.size()-1]*10); // set normalized y coordinate for individual
+            float distance;
+            if (i !=0 )  {
+                float timepermeter = mit->first/(100*i); // time per meter
+                distance = (fastestsplit / timepermeter) + 100.0; // distance
+            } else {
+                distance = 100.0;
+            }
+          //  normalized->insert(pair<float, Athlete*>(fastestsplit/mit->first, mit->second)); // insert individual's normalized split into normalized map
+              normalized->insert(pair<float, Athlete*>(distance, mit->second)); // insert individual's 
+          //  mit->second->normalizedtime.push_back(fastestsplit/mit->first); // set normalized time for individual
+         //   mit->second->normalized_y.push_back( (i==0) ? 100.0 : 100.0*i + mit->second->normalizedtime[mit->second->normalizedtime.size()-1]*100); // set normalized y coordinate for individual
+              mit->second->normalized_y.push_back(distance); // set normalized time for individual
         }
         normalizedsplits[i] = normalized; // insert normalized map for given split into normalized splits map
     }
@@ -220,7 +239,7 @@ void Athletics::readData(Athletics& athletics) {
     for (nmit = normalizedsplits.begin(); nmit != normalizedsplits.end(); nmit++) {
         cout << "Normalized " << nmit->first << "m split" << endl;
         for (rmit = nmit->second->rbegin(); rmit != nmit->second->rend(); rmit++) {
-            cout << rmit->first << " Lane: " << rmit->second->lane << " "  << rmit->second->name << " Year: " << rmit->second->year << endl;
+            cout << "Distance: " << rmit->first << " Lane: " << rmit->second->lane << " "  << rmit->second->name << " Year: " << rmit->second->year << endl;
             // store athlete pointer in vector of athletes for each split
             athletes.push_back(rmit->second);
         }
@@ -232,12 +251,12 @@ void Athletics::readData(Athletics& athletics) {
 
 void Athletics::plotAthletes() {
     // Plot the athletes on the track using the lanes on the track
-    vector <float> color;
+   // vector <float> color;
     ifstream file;
     ofstream fileout;
-    color.push_back(0);
-    color.push_back(0.5);
-    color.push_back(0);
+  //  color.push_back(0);
+  //  color.push_back(0.5);
+  //  color.push_back(0);
     cout << endl;
     cout << "Plotting athletes on the track" << endl;
     cout << "Split groups: " << athlete_storage.size() << endl;
@@ -246,42 +265,23 @@ void Athletics::plotAthletes() {
     for (int i = 0; i < athlete_storage.size(); i++) { // iterate through split groups
         printf("%s m split\n", to_string(i).c_str());
         for (int j = 0; j < athlete_storage[i].size(); j++) { // iterate through athletes in split group
-            cout << athlete_storage[i][j]->name << " " << athlete_storage[i][j]->year << " " << athlete_storage[i][j]->lane << " " << athlete_storage[i][j]->normalizedtime[i] << endl;
+         //   cout << athlete_storage[i][j]->name << " " << athlete_storage[i][j]->year << " " << athlete_storage[i][j]->lane << " " << athlete_storage[i][j]->normalizedtime[i] << endl;
             cout << "Normalized y: " << athlete_storage[i][j]->normalized_y[i] << endl;
             // Need to go through athlete_storage and convert normalized times to y coordinates. The put all y coordinates in a vector; plot vector on lane
-     //       if (i==0) { // at starting line (reaction time)
                 freopen(("jgr/" + to_string(i) + "m_split_" + to_string(j) + "place" + ".jgr").c_str(), "w", stdout);
-                plotTrack(color); // plot up to current lane for each lane in split group
+                plotTrack(); // plot up to current lane for each lane in split group
                 freopen("/dev/tty", "a", stdout); // reset stdout to terminal
-    //        }
-     /*       string content;
-            if (i > 0) { // 10m splits and beyond (open previous file and read content)
-                string line;
-                file.open("jgr/" + to_string(i-1) + "m_split_" + to_string(j) + "place" + ".jgr");
-                while (getline(file, line)) {
-                    content += line + "\n";
-                }
-                file.close();
-            }
-                // read previous file's content and place in string content
-            fileout.open("jgr/" + to_string(i) + "m_split_" + to_string(j) + "place" + ".jgr", ios::app);
-            if (i>0) { // 10m splits and beyond (write content to new file)
-                fileout << content;
-            }
-    */
             fileout.open("jgr/" + to_string(i) + "m_split_" + to_string(j) + "place" + ".jgr", ios::app);
             for (int k = 0; k <= j; k++) { // iterate through athletes up to current athlete place
                 float x = 100.0/lanes*athlete_storage[i][k]->lane - ((100.0/lanes)/2);
                 float y;
-               // if (i==0)  y = 10;
-              //  else y = 10.0*i + (athlete_storage[i][k]->normalizedtime[i]*10);
                 y = athlete_storage[i][k]->normalized_y[i];
                 char buffer2[45];
                 snprintf(buffer2, 45, "Place: %d %s Lane: %d", k+1, athlete_storage[i][k]->name.c_str(), athlete_storage[i][k]->lane);
                 buffer2[sizeof(buffer2)-1] = '\0';
                 char buffer[200];
-            //    snprintf(buffer,200, "newcurve marktype box linetype dashed color 1 1 0 marksize 0.35 0.175 pts %f %f label : %s\n",x, y, buffer2);
-                snprintf(buffer,200, "newcurve marktype box linetype dashed color %f %f %f marksize 0.35 0.175 label : %s\n", athlete_storage[i][k]->color[0]/255.0, athlete_storage[i][k]->color[1]/255.0,athlete_storage[i][k]->color[2]/255.0 ,buffer2);
+                snprintf(buffer,200, "newcurve marktype box linetype dashed glines 7 2 color %f %f %f marksize .75 3.75 label : %s\n", \
+                        athlete_storage[i][k]->color[0]/255.0, athlete_storage[i][k]->color[1]/255.0,athlete_storage[i][k]->color[2]/255.0 ,buffer2);
                 buffer[sizeof(buffer)-1] = '\0';
                 fileout << buffer;
                 string pts = "pts"; 
@@ -292,30 +292,117 @@ void Athletics::plotAthletes() {
                 }
                 cout << "pts: " << pts << endl;
                 fileout << pts << "\n";
-                //if (i==0) {
-               //     fileout << "pts " << x << " " << y  << "\n";
-              //  }
             }
             fileout.close();
         }
     }
 }
 
+void Athletics::formSEC () {
+    // SEC schools and colors
+    SEC *Tennessee = new SEC();
+    Tennessee->trackcolor = {255, 130, 0};
+    Tennessee->lanecolor = {255, 255, 255};
+    Tennessee->logocolor = {88, 89, 91};
+    Tennessee->name = "Tennessee";
+    schools["Tennessee"] = Tennessee;
+    SEC *Florida = new SEC();
+    Florida->trackcolor = {0, 33, 165};
+    Florida->lanecolor = {255, 255, 255};
+    Florida->logocolor = {250, 70, 22};
+    Florida->name = "Florida";
+    schools["Florida"] = Florida;
+    SEC *Alabama = new SEC();
+    Alabama->trackcolor = {158, 27, 50};
+    Alabama->lanecolor = {130, 138, 143};
+    Alabama->logocolor = {255, 255, 255};
+    Alabama->name = "Alabama";
+    schools["Alabama"] = Alabama;
+    SEC *Auburn = new SEC();
+    Auburn->trackcolor = {12, 35, 64};
+    Auburn->lanecolor = {255, 255, 255};
+    Auburn->logocolor = {232, 119, 34};
+    Auburn->name = "Auburn";
+    schools["Auburn"] = Auburn;
+    SEC *Arkansas = new SEC();
+    Arkansas->trackcolor = {157, 34, 53};
+    Arkansas->lanecolor = {255, 255, 255};
+    Arkansas->logocolor = {255, 255, 255};
+    Arkansas->name = "Arkansas";
+    schools["Arkansas"] = Arkansas;
+    SEC *Georgia = new SEC();
+    Georgia->trackcolor = {186, 12, 47};
+    Georgia->lanecolor = {0, 0, 0};
+    Georgia->logocolor = {255, 255, 255};
+    Georgia->name = "Georgia";
+    schools["Georgia"] = Georgia;
+    SEC *Kentucky = new SEC();
+    Kentucky->trackcolor = {0, 51, 160};
+    Kentucky->lanecolor = {0, 0, 0};
+    Kentucky->logocolor = {255, 255, 255};
+    Kentucky->name = "Kentucky";
+    schools["Kentucky"] = Kentucky;
+    SEC *LSU = new SEC();
+    LSU->trackcolor = {70, 29 ,124};
+    LSU->lanecolor = {255, 255, 255};
+    LSU->logocolor = {253, 208, 35};
+    LSU->name = "LSU";
+    schools["LSU"] = LSU;
+    SEC *OleMiss = new SEC();
+    OleMiss->trackcolor = {204, 9, 47};
+    OleMiss->lanecolor = {255, 255, 255};
+    OleMiss->logocolor = {22, 43, 72};
+    OleMiss->name = "Ole Miss";
+    schools["Ole Miss"] = OleMiss;
+    SEC *MSU = new SEC();
+    MSU->trackcolor = {102, 0, 0};
+    MSU->lanecolor = {255, 255, 255};
+    MSU->logocolor = {255, 255, 255};
+    MSU->name = "Mississippi State";
+    schools["Mississippi State"] = MSU;
+    SEC *Missouri = new SEC();
+    Missouri->trackcolor = {0, 0, 0};
+    Missouri->lanecolor = {255, 255, 255};
+    Missouri->logocolor = {241, 184, 45};
+    Missouri->name = "Missouri";
+    schools["Missouri"] = Missouri;
+    SEC *SouthCarolina = new SEC();
+    SouthCarolina->trackcolor = {0, 100, 61, 43};
+    SouthCarolina->lanecolor = {255, 255, 255};
+    SouthCarolina->logocolor = {0, 0, 0};
+    SouthCarolina->name = "South Carolina";
+    schools["South Carolina"] = SouthCarolina;
+    SEC *TexasAM = new SEC();
+    TexasAM->trackcolor = {80, 0, 0};
+    TexasAM->lanecolor = {255, 255, 255};
+    TexasAM->logocolor = {255, 255, 255};
+    TexasAM->name = "Texas A&M";
+    schools["Texas A&M"] = TexasAM;
+    SEC *Vanderbilt = new SEC();
+    Vanderbilt->trackcolor = {0, 0, 0};
+    Vanderbilt->lanecolor = {255, 255, 255};
+    Vanderbilt->logocolor = {134, 109, 75};
+    Vanderbilt->name = "Vanderbilt";
+    schools["Vanderbilt"] = Vanderbilt;
+}
 
 int main(int argc, char** argv) {
     if (argc < 3) {
-        printf("Usage: %s <lanes> <color>\n", argv[0]);
+        printf("Usage: %s <lanes> <SEC School Name>\n", argv[0]);
         return 1;
     }
-    vector <float> color;
-    color.push_back(stof(argv[2])/255.0);
-    color.push_back(stof(argv[3])/255.0);
-    color.push_back(stof(argv[4])/255.0);
     Athletics a;
     a.lanes = atoi(argv[1]);
     for (int i = 1; i <= a.lanes; i++) {
         a.availablelanes.push_back(i);
     }
+    a.formSEC();
+    a.selectedschool =  a.schools[argv[2]];
+    cout << "Selected School: " << a.selectedschool->name << endl;
+//    color.push_back(stof(argv[2])/255.0);
+//    color.push_back(stof(argv[3])/255.0);
+//    color.push_back(stof(argv[4])/255.0);
+
     a.readData(a);
     a.plotAthletes();
 
