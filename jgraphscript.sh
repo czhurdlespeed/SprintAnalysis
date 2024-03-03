@@ -11,13 +11,13 @@ rm jgr/*
  read lanes
 
  # Ask for user input for SEC school
- echo "Enter the SEC school: "
+ echo "Enter an SEC school Options: [Alabama, Arkansas, Auburn, Florida, Georgia, Kentucky, LSU, Ole Miss, Mississippi State, Missouri, South Carolina, Tennessee, Texas A&M, Vanderbilt]:"
  read school
 
  # Creating the jgraph files
  echo "Creating the jgraph files..."
  # run the program
- bin/tracksplits $lanes $school
+ bin/tracksplits $lanes "$school"
 
 
 

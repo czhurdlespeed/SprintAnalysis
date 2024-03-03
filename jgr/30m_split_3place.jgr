@@ -27,7 +27,7 @@ newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 
 newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 x 94.444444 y 50 : 9
 newstring hjl vjb lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 10 x 1 y 110 : Start
 newstring hjr vjb lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 10 x 99 y 1110 : Finish
-newstring hjc vjc lcolor 0.945098 0.721569 0.176471 font Times-Bold fontsize 28 rotate 90 x 50.000000 y 600 : Missouri
+newstring hjc vjc lcolor 0.525490 0.427451 0.294118 font Times-Bold fontsize 28 rotate 90 x 50.000000 y 600 : Vanderbilt
 newline pts 0 200.000000 100 200.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
 newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 201.000000 : 10m
 newline pts 0 300.000000 100 300.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
