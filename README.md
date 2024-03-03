@@ -10,8 +10,8 @@
       - runs program 
         - specify number of lanes
         - specify SEC School (Track adopts school's colors)
-      - converts to jpeg (~1min to complete)
-      - converts jpegs to mpg via ffmpeg
+      - converts to jpeg (~ 1 min to complete)
+      - converts jpegs to mp4 via ffmpeg
 * Directory Structure
   - `src` contains source code
   - `bin` contains excutables
