@@ -115,7 +115,8 @@ void Athletics::readData(Athletics& athletics) {
     map <float, Athlete*> split100m; // map of 100m splits to athletes
     string line;
     getline(file, line); // skip header
-    while (getline(file, line)) {
+    int lanesremaining = athletics.lanes;
+    while (getline(file, line) && (lanesremaining > 0)) {
         stringstream ss(line);
         string token;
         Athlete *a = new Athlete(); // create new athlete 
@@ -170,6 +171,7 @@ void Athletics::readData(Athletics& athletics) {
         }
         ss.clear();
         athletes.push_back(a);
+        lanesremaining--;
     }
 
 
@@ -218,14 +220,15 @@ void Athletics::readData(Athletics& athletics) {
             if (i !=0 )  {
                 float timepermeter = mit->first/(100*i); // time per meter
                 distance = (fastestsplit / timepermeter) + 100.0; // distance
+                mit->second->normalized_y.push_back(distance); // set normalized time for individual
             } else {
-                distance = 100.0;
+                distance = mit->first;
+                mit->second->normalized_y.push_back(100.0); // set normalized time for individual
             }
           //  normalized->insert(pair<float, Athlete*>(fastestsplit/mit->first, mit->second)); // insert individual's normalized split into normalized map
               normalized->insert(pair<float, Athlete*>(distance, mit->second)); // insert individual's 
           //  mit->second->normalizedtime.push_back(fastestsplit/mit->first); // set normalized time for individual
          //   mit->second->normalized_y.push_back( (i==0) ? 100.0 : 100.0*i + mit->second->normalizedtime[mit->second->normalizedtime.size()-1]*100); // set normalized y coordinate for individual
-              mit->second->normalized_y.push_back(distance); // set normalized time for individual
         }
         normalizedsplits[i] = normalized; // insert normalized map for given split into normalized splits map
     }
@@ -268,16 +271,27 @@ void Athletics::plotAthletes() {
          //   cout << athlete_storage[i][j]->name << " " << athlete_storage[i][j]->year << " " << athlete_storage[i][j]->lane << " " << athlete_storage[i][j]->normalizedtime[i] << endl;
             cout << "Normalized y: " << athlete_storage[i][j]->normalized_y[i] << endl;
             // Need to go through athlete_storage and convert normalized times to y coordinates. The put all y coordinates in a vector; plot vector on lane
-                freopen(("jgr/" + to_string(i) + "m_split_" + to_string(j) + "place" + ".jgr").c_str(), "w", stdout);
+                freopen(("jgr/" + to_string(i) + "0m_split_" + to_string((j+1)) + "place" + ".jgr").c_str(), "w", stdout);
                 plotTrack(); // plot up to current lane for each lane in split group
                 freopen("/dev/tty", "a", stdout); // reset stdout to terminal
-            fileout.open("jgr/" + to_string(i) + "m_split_" + to_string(j) + "place" + ".jgr", ios::app);
+            fileout.open("jgr/" + to_string(i) + "0m_split_" + to_string((j+1)) + "place" + ".jgr", ios::app);
             for (int k = 0; k <= j; k++) { // iterate through athletes up to current athlete place
                 float x = 100.0/lanes*athlete_storage[i][k]->lane - ((100.0/lanes)/2);
                 float y;
                 y = athlete_storage[i][k]->normalized_y[i];
-                char buffer2[45];
-                snprintf(buffer2, 45, "Place: %d %s Lane: %d", k+1, athlete_storage[i][k]->name.c_str(), athlete_storage[i][k]->lane);
+                char buffer2[55];
+                if (k==0) {
+                    snprintf(buffer2, 55, "%dst,\t%s,\tLane: %d", k+1, athlete_storage[i][k]->name.c_str(), athlete_storage[i][k]->lane);
+                } 
+                else if (k==1) {
+                    snprintf(buffer2, 55, "%dnd,\t%s,\tLane: %d", k+1, athlete_storage[i][k]->name.c_str(), athlete_storage[i][k]->lane);
+                }
+                else if (k==2) {
+                    snprintf(buffer2, 55, "%drd,\t%s,\tLane: %d", k+1, athlete_storage[i][k]->name.c_str(), athlete_storage[i][k]->lane);
+                }
+                else {
+                    snprintf(buffer2, 55, "%dth,\t%s,\tLane: %d", k+1, athlete_storage[i][k]->name.c_str(), athlete_storage[i][k]->lane);
+                }
                 buffer2[sizeof(buffer2)-1] = '\0';
                 char buffer[200];
                 snprintf(buffer,200, "newcurve marktype box linetype dashed glines 7 2 color %f %f %f marksize .75 3.75 label : %s\n", \
@@ -295,7 +309,8 @@ void Athletics::plotAthletes() {
             }
             fileout.close();
         }
-    }
+    
+    } 
 }
 
 void Athletics::formSEC () {
