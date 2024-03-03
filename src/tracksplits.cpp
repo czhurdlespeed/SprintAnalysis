@@ -275,6 +275,15 @@ void Athletics::plotAthletes() {
                 plotTrack(); // plot up to current lane for each lane in split group
                 freopen("/dev/tty", "a", stdout); // reset stdout to terminal
             fileout.open("jgr/" + to_string(i) + "0m_split_" + to_string((j+1)) + "place" + ".jgr", ios::app);
+            fileout << "newgraph\n";
+            fileout << "xaxis\n";
+            fileout << "min 0 max 100 size 5.5 \n";
+            float hash = 100.0/lanes;
+            fileout << "no_auto_hash_labels mhash 0 hash " << hash << "\n";
+            fileout << "yaxis\n";
+            fileout << "min 0 max 1200 size 10.75\n"; // 120 -> 240
+            fileout << "nodraw\n";
+
             for (int k = 0; k <= j; k++) { // iterate through athletes up to current athlete place
                 float x = 100.0/lanes*athlete_storage[i][k]->lane - ((100.0/lanes)/2);
                 float y;

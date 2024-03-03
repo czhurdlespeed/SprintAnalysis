@@ -46,5 +46,12 @@ newline pts 0 900.000000 100 900.000000 color 0.941176 0.862745 0.274510 linethi
 newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 901.000000 : 80m
 newline pts 0 1000.000000 100 1000.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
 newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 1001.000000 : 90m
+newgraph
+xaxis
+min 0 max 100 size 5.5 
+no_auto_hash_labels mhash 0 hash 11.1111
+yaxis
+min 0 max 1200 size 10.75
+nodraw
 newcurve marktype box linetype dashed glines 7 2 color 0.686275 0.772549 0.447059 marksize .75 3.75 label : 1st,	Carl Lewis,	Lane: 9
 pts 94.444443 100.000000
