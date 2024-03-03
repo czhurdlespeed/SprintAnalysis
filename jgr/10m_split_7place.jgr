@@ -5,7 +5,7 @@ no_auto_hash_labels mhash 0 hash 11.111111
 yaxis
 min 0 max 1200 size 10.75
 nodraw
-newcurve marktype box marksize 100 1200 cfill 0.274510 0.113725 0.486275 pts 50 600
+newcurve marktype box marksize 100 1200 cfill 0.000000 0.000000 0.000000 pts 50 600
 newline pts 11.111111 0.000000 11.111111 1200.000000 color 1 1 1 linethickness 2
 newline pts 22.222222 0.000000 22.222222 1200.000000 color 1 1 1 linethickness 2
 newline pts 33.333333 0.000000 33.333333 1200.000000 color 1 1 1 linethickness 2
@@ -27,7 +27,7 @@ newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 
 newstring hjc vjc lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 16 x 94.444444 y 50 : 9
 newstring hjl vjb lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 10 x 1 y 110 : Start
 newstring hjr vjb lcolor 1.000000 1.000000 1.000000 font Times-Bold fontsize 10 x 99 y 1110 : Finish
-newstring hjc vjc lcolor 0.992157 0.815686 0.137255 font Times-Bold fontsize 28 rotate 90 x 50.000000 y 600 : LSU
+newstring hjc vjc lcolor 0.945098 0.721569 0.176471 font Times-Bold fontsize 28 rotate 90 x 50.000000 y 600 : Missouri
 newline pts 0 200.000000 100 200.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
 newstring hjl vjb lcolor 0.941176 0.862745 0.274510 font Times-Bold fontsize 10 x 1 y 201.000000 : 10m
 newline pts 0 300.000000 100 300.000000 color 0.941176 0.862745 0.274510 linethickness 1 linetype dashed
@@ -53,17 +53,17 @@ no_auto_hash_labels mhash 0 hash 11.1111
 yaxis
 min 0 max 1200 size 10.75
 nodraw
-newcurve marktype box linetype dashed glines 7 2 color 0.184314 0.400000 0.560784 marksize .75 3.75 label : 1st,	Leroy Burrell,	Lane: 8
+newcurve marktype box linetype dashed glines 7 2 color 0.184314 0.400000 0.560784 marksize 1 5 label :  1st Leroy Burrell '91        Lane: 8  
 pts 83.333336 100.000000 83.333336 200.000000
-newcurve marktype box linetype dashed glines 7 2 color 0.909804 0.074510 0.619608 marksize .75 3.75 label : 2nd,	Ben Johnson,	Lane: 3
+newcurve marktype box linetype dashed glines 7 2 color 0.909804 0.074510 0.619608 marksize 1 5 label :  2nd Ben Johnson '87          Lane: 3  
 pts 27.777779 100.000000 27.777779 199.456512
-newcurve marktype box linetype dashed glines 7 2 color 0.615686 0.901961 0.011765 marksize .75 3.75 label : 3rd,	Usain Bolt,	Lane: 4
+newcurve marktype box linetype dashed glines 7 2 color 0.615686 0.901961 0.011765 marksize 1 5 label :  3rd Usain Bolt '08           Lane: 4  
 pts 38.888889 100.000000 38.888889 198.652283
-newcurve marktype box linetype dashed glines 7 2 color 0.737255 0.427451 0.470588 marksize .75 3.75 label : 4th,	Maurice Greene,	Lane: 7
+newcurve marktype box linetype dashed glines 7 2 color 0.737255 0.427451 0.470588 marksize 1 5 label :  4th Maurice Greene '97       Lane: 7  
 pts 72.222221 100.000000 72.222221 198.387100
-newcurve marktype box linetype dashed glines 7 2 color 0.447059 0.125490 0.274510 marksize .75 3.75 label : 5th,	Christian Coleman,	Lane: 1
+newcurve marktype box linetype dashed glines 7 2 color 0.447059 0.125490 0.274510 marksize 1 5 label :  5th Christian Coleman '17    Lane: 1  
 pts 5.555555 100.000000 5.555555 197.704224
-newcurve marktype box linetype dashed glines 7 2 color 0.309804 0.627451 0.203922 marksize .75 3.75 label : 6th,	Justin Gatlin,	Lane: 2
+newcurve marktype box linetype dashed glines 7 2 color 0.309804 0.627451 0.203922 marksize 1 5 label :  6th Justin Gatlin '17        Lane: 2  
 pts 16.666666 100.000000 16.666666 197.444092
-newcurve marktype box linetype dashed glines 7 2 color 0.454902 0.745098 0.968627 marksize .75 3.75 label : 7th,	Usain Bolt,	Lane: 6
+newcurve marktype box linetype dashed glines 7 2 color 0.454902 0.745098 0.968627 marksize 1 5 label :  7th Usain Bolt '09           Lane: 6  
 pts 61.111111 100.000000 61.111111 197.030746
