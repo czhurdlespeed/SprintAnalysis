@@ -392,9 +392,9 @@ void Athletics::formSEC () { // form SEC schools and colors
     Missouri->name = "Missouri";
     schools["Missouri"] = Missouri;
     SEC *SouthCarolina = new SEC();
-    SouthCarolina->trackcolor = {0, 100, 61, 43};
-    SouthCarolina->lanecolor = {255, 255, 255};
-    SouthCarolina->logocolor = {0, 0, 0};
+    SouthCarolina->trackcolor = {115, 0, 10};
+    SouthCarolina->lanecolor = {0, 0, 0};
+    SouthCarolina->logocolor = {255, 255, 255};
     SouthCarolina->name = "South Carolina";
     schools["South Carolina"] = SouthCarolina;
     SEC *TexasAM = new SEC();
